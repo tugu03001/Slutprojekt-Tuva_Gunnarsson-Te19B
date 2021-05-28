@@ -1,0 +1,813 @@
+/*Tuvas css-fil */
+
+@font-face {
+  font-family: "myFirstFont";
+  src: url("Sex_Pistols.ttf");
+}
+
+/*Om skärmen blir mindre kommer man kunna scrolla i sidleds, youtube videon kommer att försvinna och alla bilder*/
+@media screen and (max-width: 900px) {
+  .item10, .item_stil_3spalt, .item_mode_2spalt {
+    overflow-x: scroll;
+  }
+  iframe {
+    visibility: hidden;
+  }
+  #image1, #image2, #image3, #image4, #image5, #image6, #image7, #image8, 
+  #image9, #image10, #image11, #image12, #image13, #image14, #image15,
+  #image16, #image17, #image18, #image19, #image20, #image21, #image22, #image23, #image24{
+    visibility:hidden;
+  }
+}
+
+/*Bakgrunds färgen på hela hemsdan och att om det är något overflow i x-led ska det 
+inte synas och om det är det i y-led ska man kunna scrolla ner*/
+body {
+  margin: 0;
+  background-color: white;
+  overflow-x: hidden; 
+  overflow-y: scroll; 
+}
+/*Här beskrivs det hur mainen i detta fallet den röda rektangeln 
+ska ha avstånd både uppe och nere så att den inte börjar precis vid naven och 
+inte slutar precis vid footern*/
+main {
+  margin:0;
+  margin-bottom:20px;
+}
+
+/*alla h1-och h2:or ska vara i myfirstfont*/
+h1 {
+margin-left: 14%;
+color:white;
+margin-top:0px;
+text-align: left;
+color: rgb(84,84,84);
+font-family: "myFirstFont";
+}
+
+h2 {
+margin-top: 40px;
+margin-left: 14%;
+font-family: "myFirstFont";
+}
+
+
+/*Hur huvud kontentet ska vara utplacerat, alltså hur griden är uppbygd*/
+.grid-container-main {
+  display: grid;
+  grid-template-columns: 14% auto 14%;
+  grid-template-rows: 100px 70px 90px auto 100px;
+}
+
+/*Ingen dekoration (sträck under texten) i navbaren och att detxten ska avar ljusgrå*/
+.nav-a {
+  color:#D3D3D3;
+  text-decoration:none;
+}
+
+.nav-a:link {
+  color:#D3D3D3;
+  text-decoration:none;
+}
+
+.nav-a:visited {
+  color:#D3D3D3;
+  text-decoration:none;
+}
+
+/*Att när pekaren är över texten i nav 
+kommer den att bli svart och bakrunden kommer bli i lopardmönster*/
+.nav-a:hover{
+  background: url("leopard.jpg") no-repeat;
+  background-size: 100%;
+  color: rgb(0, 0, 0);
+}
+
+.nav-a:active {
+  background: url("leopard.jpg") no-repeat;
+  background-size: 200%;
+  color: rgb(0, 0, 0)
+}
+
+
+/*Var de olikaförslagen i menyn ska vara utplacerade*/
+.grid-container-nav {
+  display: grid;
+  grid-template-columns: 150px 240px auto;
+  width:100%;
+}
+
+/*Vilen färg menyn ska vara, hur texten ska sitta, vilken storlek den ska ha*/
+.grid-item-nav {
+  background-color: black;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 3ex;
+}
+/*Naven är i listform och här talar man om att den inte ska se ut som en lista med punkter*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*Hur innehållet i navbaren kommer att placeras ut och vilken storlek och font som ska vara*/
+li a
+{
+ display:block;
+ float:left;
+ width:150px;  
+ padding: 5px; 
+ font-family: "myFirstFont";
+ font-size: 28px;
+}
+
+/*Det är hur rekangeln ska se ut, vara uppbygd och att 
+hörnen ska vara rundade och vilken färg den ska ha*/
+.item10 {
+  width:100%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-column: 2;
+  grid-row: 1;
+  grid-row-end: 8;
+  background-color: #bb3221;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom:15px;
+  margin-top:0px;
+  border-radius: 25px;
+}
+/*När det ska vara 2 spaltig, den ser likadan ut som item10 men den är tvåsplatig*/
+.item_mode_2spalt {
+  width:100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 2;
+  grid-row: 1;
+  grid-row-end: 8;
+  background-color: #bb3221;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom:15px;
+  margin-top:0px;
+  border-radius: 25px;
+}
+
+/*När det ska vara 3 spaltig, den ser likadan ut som item10 men den är tresplatig*/
+.item_stil_3spalt {
+  width:100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: 2;
+  grid-row: 1;
+  grid-row-end: 8;
+  background-color: #bb3221;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom:15px;
+  margin-top:0px;
+  border-radius: 25px;
+}
+
+/*När det ska vara 2 spaltig, den ser likadan ut som item10 men den är tvåsplatig*/
+.item_musik_content {
+  width:100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column: 2;
+  grid-row: 1;
+  grid-row-end: 8;
+  background-color: #bb3221;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom:15px;
+  margin-top:0px;
+  border-radius: 25px;
+}
+/*Allt som är med på musik sidan och var det ska vara placerat*/
+.item_musik1 {
+  grid-column: 1/ span 1;
+  grid-row: 1;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik2 {
+  grid-column: 2/ span 1;
+  grid-row: 1;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik3 {
+  grid-column: 1/ span 1;
+  grid-row: 2;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik4 {
+  grid-column: 2/ span 1;
+  grid-row: 2;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik5 {
+  grid-column: 1/ span 1;
+  grid-row: 3;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik6 {
+  grid-column: 2/ span 1;
+  grid-row: 3;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik7 {
+  grid-column: 1/ span 1;
+  grid-row: 4;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik8 {
+  grid-column: 2/ span 1;
+  grid-row: 4;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik9 {
+  grid-column: 1/ span 1;
+  grid-row: 5;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik10 {
+  grid-column: 2/ span 1;
+  grid-row: 5;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik11 {
+  grid-column: 1/ span 1;
+  grid-row: 6;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik12 {
+  grid-column: 2/ span 1;
+  grid-row: 6;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik13 {
+  grid-column: 1/ span 1;
+  grid-row: 7;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik14 {
+  grid-column: 2/ span 1;
+  grid-row: 7;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik15 {
+  grid-column: 1/ span 1;
+  grid-row: 8;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik16 {
+  grid-column: 2/ span 1;
+  grid-row: 8;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik17 {
+  grid-column: 1/ span 1;
+  grid-row: 9;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik18 {
+  grid-column: 2/ span 1;
+  grid-row: 9;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik19 {
+  grid-column: 1/ span 1;
+  grid-row: 10;
+  margin-left: 20px; 
+  margin-right: 5px; 
+  margin-top:50px;
+  font-size: 2.5ex;
+  font-weight: bold;
+  
+ } 
+.item_musik20 {
+  grid-column: 2/ span 1;
+  grid-row: 10;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_musik21 {
+  grid-column: 1/ span 2;
+  grid-row: 11;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+
+/*Dessa item_mode 1-3 är på modesidan. item_mode1 breder ut sig i hela rektangeln. De andra två är uppdleade i tvåsplat*/
+.item_mode1 {
+  grid-column: 1/ span 2;
+  grid-row: 1;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+.item_mode2 {
+  grid-column: 1/ span 1;
+  grid-row: 2;
+  margin-right: 10px;
+  margin-left: 5px;
+  padding-right: 15px;
+  border-right: 2px solid;
+}
+.item_mode3 {
+  grid-column: 2/ span 1;
+  grid-row: 2;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/*item_mode4 och 4 är färgrektanglarna uppdelade*/
+
+.item_mode4{
+  grid-column: 1;
+}
+
+.item_mode5{
+  grid-column: 2;
+  grid-row: 3;
+  margin-top: 85px; 
+  color: white;
+}
+
+/*Här är färgerna på rektanglarna*/
+.mode4{
+  fill: black;
+}
+
+.mode5{
+  fill:#474BD8;
+}
+
+.mode6{
+  fill: #4B0082;
+}
+
+.mode7{
+  fill: #ffcc13;
+}
+
+/*Här är de tre splaterna i de olika punkstilar. På de två första splterna är det en rutig border till höger*/
+.item_stil1 {
+  grid-column: 1/ span 1;
+  grid-row: 1;
+  margin-left: 5px; 
+  margin-right: 5px; 
+  padding-right: 7px;
+  border-right: 5px solid transparent;
+  border-image: url(rutigt.png) 9 round; 
+}
+.item_stil2 {
+  grid-column: 2/ span 1;
+  grid-row: 1;
+  margin-right: 10px;
+  margin-left: 5px;
+  padding-right: 7px;
+  border-right: 5px solid transparent;
+  border-image: url(rutigt.png) 9 round; 
+}
+
+.item_stil3 {
+  grid-column: 3/ span 2;
+  grid-row: 1;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/*Från item1a till item 1e beskrivs det hur teten 
+och bilderna ska vara utplacerade på första sidan (index.html) item1a och item1e är 
+texten och item1b, item1c och item1d är bilderna*/
+.item1a {
+  grid-column: 1/ span 2;
+  grid-row: 1;
+  margin-left: 5px; 
+}
+.item1b {
+  grid-column: 3/ span 2;
+  grid-row: 1;
+  margin-top: 25px;
+  margin-right: 10px;
+  margin-left: 40px;
+}
+.item1c {
+  grid-column: 1/ span 1;
+  grid-row: 2;
+}
+.item1d {
+  grid-column: 1;
+  grid-row: 2;
+  margin-left: 170px;
+}
+.item1e {
+  grid-column: 2/ span 3;
+  grid-row: 2;
+  margin-right: 10px;
+  margin-left: 130px;
+}
+
+/* Här beskrivs det hur tablen på musik sidan ska vara utplacerad. Det börjar från column 
+1 och sträcker sig till kolumn 4. Det är till 4 för att det 
+inte ska sitta så tajt och nära, det är spanat för att skapa ett bra och lagom utrymme. Också vilken storlek texten ska ha*/
+table {
+  width: 100%;
+  grid-column: 1 /span 4;
+  font-size: 2.5ex;
+  border-collapse: collapse;
+}
+
+td, th {
+  text-align: left;
+  padding: 15px;
+}
+
+/* Det är denna som beskriver hur audio tagen ska se ut på musik sidan. Det står att det 
+ska vara en border med rundade hörn och med leopardmönster som "fägren" på borden.*/
+audio {
+  border-radius: 57px;
+  margin-top: 20px;
+  border: 15px solid transparent;
+ /* background: url(leopard.jpg);*/
+}
+
+
+/*item3.. är alla items som är utplacerade på bandsidan. Item3a,e,g,k,m och q 
+är all text och var i griden som de ska vara.
+Item3b,d,h,j,n och p är alla bilder. resterande Items är youtube klippen*/
+.item3a {
+  grid-column: 1/ span 2;
+  grid-row: 1;
+  margin-left: 0px;
+}
+
+.item3b {
+  grid-column: 3/ span 2;
+  grid-row: 1;
+  margin-top: 25px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 70px;
+}
+
+.item3c {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.item3d {
+  grid-column: 1/ span 2;
+  grid-row: 3;
+  margin-left: 0px;
+}
+
+.item3e {
+  grid-column: 3/ span 2;
+  grid-row: 3;
+  margin-top: 70px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.item3f {
+  grid-column: 2;
+  grid-row:4;
+}
+
+.item3g {
+  grid-column: 1/ span 2;
+  grid-row: 5;
+  margin-left: 0px;
+}
+
+.item3h {
+  grid-column: 3/ span 2;
+  grid-row: 5;
+  margin-top: 25px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 70px;
+}
+
+.item3i {
+  grid-column: 2;
+  grid-row: 6;
+}
+
+.item3j {
+  grid-column: 1/ span 2;
+  grid-row: 7;
+  margin-left: 0px;
+}
+
+.item3k {
+  grid-column: 3/ span 2;
+  grid-row: 7;
+  margin-top: 70px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.item3l {
+  grid-column: 2;
+  grid-row:8;
+}
+
+.item3m {
+  grid-column: 1/ span 2;
+  grid-row: 9;
+  margin-left: 0px;
+}
+
+.item3n {
+  grid-column: 3/ span 2;
+  grid-row: 9;
+  margin-top: 25px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 70px;
+}
+
+.item3o {
+  grid-column: 2;
+  grid-row: 10;
+}
+
+.item3p {
+  grid-column: 1/ span 2;
+  grid-row: 11;
+  margin-left: 0px;
+}
+
+.item3q {
+  grid-column: 3/ span 2;
+  grid-row: 11;
+  margin-top: 70px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.item3r {
+  grid-column: 2;
+  grid-row:12;
+}
+
+/* Här säger det att det ska vara en border runt youtube 
+videorna i musik sidan. Den ska ha en border runt med rutigt mönster*/
+iframe {
+  margin-top: 20px;
+  border: 20px solid transparent;
+}
+
+/*Här är tabellen längst ner i band sidan*/
+.item3s {
+  grid-column: 1/ span 4;
+  grid-row: 13;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+
+/*Detta är hur quiz sidan ska se ut. Quiz1 är texten och quiz2 är hela quizet och 
+sen quiz2 - 6 är alla frågor i sig, det är bara där för att de ska 
+ha mellanrum mellan varandra*/
+.quiz {
+  grid-row: 2;
+  grid-column: 1/ span 2;
+  font-weight: bolder;
+  margin-left: 2em;
+}
+
+.quiz1 {
+  grid-row: 1;
+  grid-column: 1/ span 3;
+  margin-bottom: 40px;
+  margin-left: 2em;
+  margin-top: .5rem;
+}
+
+dd, dt {
+   margin-bottom: 20px;
+}
+
+/* Här beskrivs det hur knapparna längst ned på quiz sidan ska se ut. Dem ska vara 
+leopardmönstrade, ska ha 10px padding. Dem ska vara 120px bred sen
+när man hovrar över dem blir de bredare och det sker på 2 sekunder*/
+#button {
+  background-image: url(leopard.jpg);
+  color: #fff;
+  font-weight: bolder;
+  font-size: 20px;
+  padding:10px;
+  transition: width 2s;
+  width: 120px;
+  transition-duration: 0.4s;
+}
+
+/* När man hovarar över knappen ska den bli 200px bred */
+#button:hover{
+  width: 200px;
+}
+/*När man trycker på knappen kommer den att visa att den trycks ner*/
+#button:active{
+  transform: translateY(5px);
+}
+
+/*Detta är hur fyll-i-fälten på forums sidan ska se ut*/
+input[type=text],[type=password],[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/*Detta är hur färdig knappen på forums sidan ska se ut*/
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF00;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/*Här är hur tablen ska vara uppbyggd*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/*Detta är vilken färg kolumnerna ska ha på musik och band sidan coh att de ska ha en padding*/
+td, th {
+  border: 3px solid #ffcc13;
+  text-align: center;
+  padding: 8px;
+}
+
+/*Detta är vilken färg kolumnerna ska ha på musik sidan*/
+tr:nth-child(even) {
+  background-color: #ffcc13 ;
+}
+
+/*Här är vilken färg kolumnerna ska ha så att de är varannan färg på band sidan*/
+#tr2, #tr6 {
+  background-color: #ffcc13; 
+}
+
+/*Här är vilken färg kolumnerna ska ha så att de är varannan färg*/
+#tr3, #tr4, #tr5 {
+  background-color: #4B0082; 
+}
+
+/*Hur fottern ska se ut, vilken färg den ska ha, hr hög och bred den ska vara. 
+Vilken färg texten ska ha och att den inte ska ha någon dekoration. 
+Sen ska all overflow och vara gömd*/
+/*Dessa är klara under här. Footer klar*/
+footer {
+	display:block;
+  width:100%;
+	background-color:hsl(7, 70%, 0%);
+	height:150px;
+	text-align:center;
+	color:#D3D3D3;
+  overflow-y: hidden;
+  text-decoration: none;
+
+}
+a i {
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+
+/*Footerns grid system*/
+.grid-container-footer {
+  display: grid;
+  grid-template-columns: 9% 3.5% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 30px 20px 30px 20px;
+}
+
+/*FooterX är logga och var den ska vara utplacerad. 
+Footer1 är namnet på hemsidan och var den ska vara utplacerad*/
+.footerX {
+  grid-column: 1/ span 2;
+  grid-row: 2;
+  margin-right: 2px;
+}
+
+.footer1 {
+  grid-column: 2/ span 2;
+  grid-row: 2;
+}
+
+/*footer2,3,4,5 och 7 är de olika sidornas namn som man kan klicka på. 
+Här beskrivs det hur de ska vara utplacerade*/
+.footer2 {
+  grid-column: 4/ span 1;
+  grid-row: 4;
+
+}
+
+.footer3 {
+  grid-column: 5/ span 1;
+  grid-row: 4;
+ 
+}
+
+.footer4 {
+  grid-column: 6/ span 1;
+  grid-row: 4;
+
+}
+
+.footer5 {
+  grid-column: 7/ span 1;
+  grid-row: 4;
+ 
+}
+
+.footer6 {
+  grid-column: 8/ span 1;
+  grid-row: 4;
+}
+
+.footer7 {
+  grid-column: 9/ span 1;
+  grid-row: 4;
+ 
+}
+
+
+/*Detta är hur "skapad av Tuav Gunnarsson" texten ska se ut och vara utplacerad*/
+.footer8 {
+  grid-column: 5/ span 3;
+  grid-row: 5;
+  margin-bottom: 40px;
+  font-size: 12px;
+  margin-left: 30px;
+  margin-top: 20px;
+  color: rgb(84,84,84);
+
+}
+
